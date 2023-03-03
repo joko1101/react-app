@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function App() {
+import State from "./Components/useState_useEffect";
+import Checkbox from "./Components/Checkbox";
+import Ref from "./Components/useRef";
+import Home from "./Components/Home";
+import State2 from "./Components/getValues";
+import Input from "./Components/CustomHook";
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/Checkbox' element={<Checkbox />} />
+          <Route path='/state' element={<State />} />
+          <Route path='/Ref' element={<Ref />} />
+          <Route path='/state2' element={<State2 />} />
+          <Route path='/input' element={<Input />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
-
-export default App;
